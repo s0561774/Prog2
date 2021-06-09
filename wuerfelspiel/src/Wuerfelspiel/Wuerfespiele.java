@@ -1,20 +1,59 @@
 package Wuerfelspiel;
 
+import java.awt.Component;
 import java.awt.List;
 import java.util.ArrayList;
+import java.util.Random;
+
+import javax.swing.Icon;
+import javax.swing.JOptionPane;
 
 public class Wuerfespiele {
 	
-private final ArrayList<Spieler> mSpielerliste;
 	
-	public Wuerfespiele(){
-		this.mSpielerliste = new ArrayList<Spieler>();
-	}
+		
 	
-	public void spielerHinzufügen(Spieler neuerSpieler){
-		this.mSpielerliste.add(neuerSpieler);
-	}
-
+public static void main(String[]args) {
+	
+	Spieler spiel = new Spieler();
+	spiel.Spielstart();
+	spiel.Anzahlspeiler();
+	
+	
 }
+}
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
 
 

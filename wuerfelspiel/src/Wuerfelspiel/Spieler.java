@@ -6,60 +6,110 @@ import javax.swing.JOptionPane;
 
 public class Spieler {
 	
-	private String name;
-	private int aktStand;
-	private Random r;
+	private int anzahlWuerfe;
+	private int punkteStand;
 	
-	Spieler(String name)
-	{
-		aktStand=0;
-		this.name = name;
-		r = new Random();
-	}
 	
-	public int getAktStand()
-	{
-		return this.aktStand;
-	}
 	
-	public boolean wuerfeln()
-	{
+	public static void Spielstart() {
+			
+	}	
 		
-		System.out.printf("%n%nSpieler %s ist an der Reihe (bisher %d Punkte) %n ----------------------------------------- %n" , this.name, this.aktStand);
-		int reihe = 0;
-		int wurf = 0;
-		boolean ende = false;
-		while(!ende)
+	public static void Anzahlspeiler() {
+		
+		String name = null;
+		boolean eingabeOk = false;
+		int anzahl = 0;
+		int anzahlspieler = 0;
+		int wurf = 6;
+		
+		
+		
+		int start = JOptionPane.showConfirmDialog(null,"Wollen sie Spiel starten?"); 
+		if (start != 1 & start !=2 ) {
+			System.out.println("" + eingabeOk);
+		
+		
+		while(!eingabeOk)
 		{
-			wurf = r.nextInt(6)+1;
-			System.out.printf("%s hat eine %d gewuerfelt %n" , this.name, wurf);
-			if(wurf==6)
-			{
-				System.out.printf("Versuch zu Ende %n Aktueller Spielstand von %s : %d Punkte %n Der naechste Spieler ist dran%n", this.name, this.aktStand);
-				ende = true;
+			String eingabe = JOptionPane.showInputDialog("Geben sie die anzahl von Spieler: ");
+			try {
+				anzahl = Integer.valueOf(eingabe);
+				eingabeOk = true;
+			//System.out.println(zahl);
 			}
-			else if(aktStand+reihe+wurf >= Spiel.siegPunkte)
+			
+			catch(NumberFormatException e)
 			{
-				System.out.printf("%s hat insgesamt %d Punkte und somit gewonnen !!!", this.name, (aktStand+reihe+wurf));
-				return true;
+				System.out.println("der einegabe war keine Zahl!");
+				
+		
 			}
-			else	 // eine 1..5 gewuerfelt und noch nicht gewonnen
-			{
-				reihe += wurf;
-				System.out.printf("in diesem Versuch bisher %d Punkte -- insgesamt %d Punkte %n", reihe, (aktStand+reihe));
-				int dialogResult = JOptionPane.showConfirmDialog (null, this.name+ ", wollen Sie weiter wuerfeln? ", "Weiter wuerfeln?", JOptionPane.YES_NO_OPTION);
-				ende = !(dialogResult==JOptionPane.YES_OPTION);
-				if(ende)
-				{
-					aktStand += reihe;
-				}
-			}
+
+			System.out.println(anzahl);	
 		}
-		return false;
+		
+		for (int i= 0; i< anzahl; i++) {
+			name=JOptionPane.showInputDialog("Geben sie Ihr name ein");
+			System.out.println(name);
+			
+			
+			while(wurf < 6)
+			{
+				String punkte = JOptionPane.showInputDialog(name, " kannst du jetzt spilen");
+				try {
+					anzahlspieler = Integer.valueOf(punkte);
+					eingabeOk = true;
+				//System.out.println(zahl);
+				}
+				
+				catch(NumberFormatException e)
+				{
+					System.out.println("der einegabe war keine Zahl!");
+				}
+				}	
+			
+			System.out.println(wurf);
+		}
+	
+		}
+		
+//		
+//		
+//		for(int i=0; i<anzahl; i++)
+//		{
+//		
+//		}
+//		
+		for(int i=0; i<anzahl; i++) {
+	
+		Random wuerfel = new Random();
+        int anzahlpunkte =1 + wuerfel.nextInt(6);
+        System.out.printf(name, " " +anzahlpunkte);
+        
+       
+        	
+        	System.out.println();
+        	
+        	 if(anzahlpunkte < 6) {
+        		 name=JOptionPane.showInputDialog("wollen sie nochmalspielen? ");
+        		 if(wurf == 0) {
+        			 anzahlpunkte ++; 
+        		 }
+        		 
+        		 else if(wurf == 6) {
+        			 System.out.println(name + "Hat verloren");
+        			 if(wurf == 20) {
+        				 
+        			 }
+        		 }
+        		System.out.println(name + "hat gewonnen");
+        	 }
+        }
 	}
+	
 
 	
-		
 }
 	
 	

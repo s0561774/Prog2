@@ -5,87 +5,74 @@ import javax.swing.JOptionPane;
 
 public class Spiel {
 	
-	public static int siegPunkte;
-	private Spieler[] spieler;
+	public static int maxPunkte;
+	public String[] name;
+	public Random zufallZahl;
+	public int[] sumPunkte;
+	public int anzahl;
+	public String eingabe = "";
+	boolean ctrl = false;
 	
-	Spiel()
-	{
-		int anzSpieler = 0;
-		int siegPunkte = 0;
-		boolean inputOk = false;
-		String input = "";
-		
-		while(!inputOk)
+	public void parameterEingaben() {
+		while(!ctrl)
 		{
 			try
 			{
-				input = JOptionPane.showInputDialog("Anzahl Spieler :");
-				inputOk = true;
-				anzSpieler = Integer.parseInt(input);
+				eingabe = JOptionPane.showInputDialog("Anzahl Spieler :");
+				
+				anzahl = Integer.parseInt(eingabe);
+				
+                eingabe = JOptionPane.showInputDialog("max punkte eingeben :");
+				
+				maxPunkte = Integer.parseInt(eingabe);				
+				
+				ctrl = true;
 			}
 			catch(NumberFormatException e)
 			{
-				inputOk = false;
+				ctrl = false;
 			}
-		}
-		
-		inputOk = false;
-		
-		while(!inputOk)
-		{
-			try
+			
+	
+			for(int i=0; i<anzahl; i++)
 			{
-				input = JOptionPane.showInputDialog("Siegpunkte :");
-				inputOk = true;
-				siegPunkte = Integer.parseInt(input);
+				name[i] = JOptionPane.showInputDialog("Name des Spielers " + (i+1)+" :");
+			
 			}
-			catch(NumberFormatException e)
-			{
-				inputOk = false;
+			
+		}
+		
+	}
+	
+	public void spielen() {
+		
+		ctrl = false;
+		for(int z=0; z<anzahl; z++)
+		{
+			while(!ctrl) {
+				
+				sumPunkte[z] = zufallZahl.nextInt(6) + 1;
+				if(sumPunkte[z] ==6)
+				{
+					sumPunkte[z] = 0;
+					System.out.printf("Versuch zu Ende %n Aktueller Spielstand von %s : %d Punkte %n Der naechste Spieler ist dran%n", name[z], sumPunkte[z]);
+					ctrl = true;
+				}
+				else {
+					System.out.printf("Versuch zu Ende %n Aktueller Spielstand von %s : %d Punkte %n Der naechste Spieler ist dran%n", name[z], sumPunkte[z]);
+				}
+				
 			}
-		}
 		
-		Spiel.siegPunkte = siegPunkte;
-		spieler = new Spieler[anzSpieler];
-		
-		namenErmitteln();
-	}
-	
-	Spiel(int siegPunkte, int anzSpieler)
-	{
-		Spiel.siegPunkte = siegPunkte;
-		spieler = new Spieler[anzSpieler];
-		
-		namenErmitteln();
-	}
-	
-	private void namenErmitteln()
-	{
-		String name = "";
-		for(int i=0; i<spieler.length; i++)
-		{
-			name = JOptionPane.showInputDialog("Name des Spielers " + (i+1)+" :");
-			spieler[i] = new Spieler(name);
 		}
 	}
 	
-	public void spielen()
-	{
-		int index = 0;
-		boolean gewonnen = false;
-		while(!gewonnen)
-		{
-			gewonnen = spieler[index].wuerfeln();
-			index = (index<spieler.length-1) ? index+1 : 0;
-		}
-	}
 	
-	public static void main(String[] args)
-	{
+	//public static void main(String[] args)
+	
+	
 		
-		Spiel spiel = new Spiel();
-		spiel.spielen();
 	}
 
-}
+
 		
