@@ -10,11 +10,9 @@ public class Spieler {
 	private int punkteStand;
 	
 	
-	
 	public static void Spielstart() {
-			
-	}	
 		
+	}
 	public static void Anzahlspeiler() {
 		
 		String name = null;
@@ -22,6 +20,7 @@ public class Spieler {
 		int anzahl = 0;
 		int anzahlspieler = 0;
 		int wurf = 6;
+		boolean input = false;
 		
 		
 		
@@ -51,7 +50,7 @@ public class Spieler {
 		
 		for (int i= 0; i< anzahl; i++) {
 			name=JOptionPane.showInputDialog("Geben sie Ihr name ein");
-			System.out.println(name);
+			System.out.println(name + "spieler");
 			
 			
 			while(wurf < 6)
@@ -73,14 +72,7 @@ public class Spieler {
 		}
 	
 		}
-		
-//		
-//		
-//		for(int i=0; i<anzahl; i++)
-//		{
-//		
-//		}
-//		
+
 		for(int i=0; i<anzahl; i++) {
 	
 		Random wuerfel = new Random();
@@ -106,7 +98,9 @@ public class Spieler {
         		System.out.println(name + "hat gewonnen");
         	 }
         }
-	}
+		
+		
+		}
 	
 
 	
