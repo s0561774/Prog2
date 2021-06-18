@@ -1,3 +1,4 @@
+package Aufgabe3;
 
 public class Moves {
 	
@@ -9,6 +10,7 @@ public class Moves {
 	     */
 	    public Moves()
 	    {
+	    	
 	        this.moves = new Move[0];
 	    }
 
@@ -53,14 +55,16 @@ public class Moves {
 	     * dann wird eine IllegalArgumentException geworfen
 	     */
 	    public Move getMoveAtIndex(int index) throws IllegalArgumentException
-	    {
-	        try {
+	    { 
+	    
+	    	try {
 	            return this.moves[index];
 	        }
 	        catch(ArrayIndexOutOfBoundsException e)
 	        {
 	            throw new IllegalArgumentException("kein gueltiger Index!");
 	        }
+	    	
 	    }
 
 	    /*

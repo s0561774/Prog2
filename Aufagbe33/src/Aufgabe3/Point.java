@@ -1,3 +1,4 @@
+package Aufgabe3;
 
 public class Point {
 	
@@ -27,5 +28,6 @@ public class Point {
     {
         return "("+ this.row + "," + this.col + ")";
     }
-
+    
+   
 }

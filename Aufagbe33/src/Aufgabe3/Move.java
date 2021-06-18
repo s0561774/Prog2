@@ -1,6 +1,10 @@
+package Aufgabe3;
 
 public class Move {
 	
+	private Point from;
+	private Point to;
+
 	/*
 	 * ein Zug von dem from-Point (fromRow,fromCol)
 	 * zum to-Point (toRow,toCol)

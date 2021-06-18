@@ -127,10 +127,7 @@ public class MyInteger {
 		
 		public static MyInteger valueOf(String s)throws IllegalArgumentException  {
 			
-			
-
-			
-			return new MyInteger(s);
+		return new MyInteger(s);
 	
 		}
 		
@@ -248,7 +245,7 @@ public class MyInteger {
 				}
 				catch(Exception e)
 				{
-					System.out.println("Objekt existiert nicht!");
+					System.out.println("Objekt existiert nicht in !");
 				}
 
 		}

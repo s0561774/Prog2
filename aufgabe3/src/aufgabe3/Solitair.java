@@ -1,6 +1,6 @@
 package aufgabe3;
 
-public class Solitaire {
+public class Solitair {
 	
 	
 	

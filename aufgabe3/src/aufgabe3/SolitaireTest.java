@@ -10,7 +10,7 @@ class SolitaireTest {
 	void testconvert1amTo1() {
 		
 		//given (Preparation)
-		Solitaire utz = new Solitaire();
+		Solitair utz = new Solitair();
 		//when (Execution)
 		String zeit = utz.convert("1:00 am");
 		// than (Verification)
@@ -21,7 +21,7 @@ class SolitaireTest {
 	void testconvert2amTo2() {
 		
 		//given (Preparation)
-		Solitaire utz = new Solitaire();
+		Solitair utz = new Solitair();
 		//when (Execution)
 		String zeit = utz.convert("2:00 am");
 		// than (Verification)
@@ -32,7 +32,7 @@ class SolitaireTest {
 	void testconvert9amTo9() {
 		
 		//given (Preparation)
-		Solitaire utz = new Solitaire();
+		Solitair utz = new Solitair();
 		//when (Execution)
 		String zeit = utz.convert("9:00 am");
 		// than (Verification)
@@ -42,7 +42,7 @@ class SolitaireTest {
 	void testconvert10amTo10() 
 {
 		//given (Preparation)
-		Solitaire utz = new Solitaire();
+		Solitair utz = new Solitair();
 		//when (Execution)
 		String zeit = utz.convert("10:00 am");
 		// than (Verification)
@@ -52,7 +52,7 @@ class SolitaireTest {
 	void testconvert1115amTo1115() {
 	
 	//given (Preparation)
-	Solitaire utz = new Solitaire();
+	Solitair utz = new Solitair();
 	//when (Execution)
 	String zeit = utz.convert("11:15 am");
 	// than (Verification)
@@ -62,7 +62,7 @@ class SolitaireTest {
 	void testconvert1pmTo13() {
 	
 	//given (Preparation)
-	Solitaire utz = new Solitaire();
+	Solitair utz = new Solitair();
 	//when (Execution)
 	String zeit = utz.convert("1:00 pm");
 	// than (Verification)
@@ -73,7 +73,7 @@ class SolitaireTest {
 	void testconvert11pmTo11() {
 	
 	//given (Preparation)
-	Solitaire utz = new Solitaire();
+	Solitair utz = new Solitair();
 	//when (Execution)
 	String zeit = utz.convert("11:00 pm");
 	// than (Verification)
@@ -84,7 +84,7 @@ class SolitaireTest {
 	void testconvert11pmTo23() {
 	
 	//given (Preparation)
-	Solitaire utz = new Solitaire();
+	Solitair utz = new Solitair();
 	//when (Execution)
 	String hours = utz.getHoursStr("11:00 pm");
 	// than (Verification)
@@ -95,12 +95,12 @@ class SolitaireTest {
 	void testGetHoursInt1pm() {
 		
 		//given (Preparation)
-		Solitaire utz = new Solitaire();
+		Solitair utz = new Solitair();
 		//when (Execution)
 		int hours = utz.getHoursInt("11:00 pm");
 		// than (Verification)
 		assertEquals(11, hours );
 		}
-	
+
 
 }
