@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
 
 public class MyInteger {
 
+	// Aufgabe2
 	
 		public static final int MAX_VALUE = 214783647;
 		public static final int MIN_VALUE = -214783647 ;

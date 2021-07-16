@@ -4,6 +4,8 @@ public class Solitaire {
     private Moves game;
     private State[][] field;
 
+    
+    // Aufgabe 3 pflichtaufgabe
     public Solitaire()
     {
         this.game = new Moves();

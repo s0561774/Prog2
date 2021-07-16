@@ -9,10 +9,12 @@ public class Spieler {
 	private int anzahlWuerfe;
 	private int punkteStand;
 	
+	// Das Erste Spiel
 	
 	public static void Spielstart() {
 		
 	}
+	
 	public static void Anzahlspeiler() {
 		
 		String name = null;
